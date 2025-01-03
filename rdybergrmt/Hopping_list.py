@@ -32,7 +32,7 @@ class OneDimension_chain_hopping_list:
     def __init__(self, L):
         self.L = L
         
-    def get_hopping_list_N_OBC(self):
+    def get_hopping_list_NN_OBC(self):
         """
         get 1 Dimension hopping or spin chain nearest hopping list
         for open boundary condition.
@@ -50,7 +50,7 @@ class OneDimension_chain_hopping_list:
             hopping_list.append([j, (j+1)])
         return hopping_list
 
-    def get_hopping_list_NN_OBC(self):
+    def get_hopping_list_NNN_OBC(self):
         """
         get 1 Dimension hopping or spin chain next-nearest hopping list
         for open boundary condition.
@@ -68,7 +68,7 @@ class OneDimension_chain_hopping_list:
             hopping_list.append([j,j+2])
         return hopping_list
 
-    def get_hopping_list_N_PBC(self):
+    def get_hopping_list_NN_PBC(self):
         """
         get 1 Dimension hopping or spin chain nearest hopping list
         for periodic boundary condition.
@@ -91,7 +91,7 @@ class OneDimension_chain_hopping_list:
         return hopping_list
 
 
-    def get_hopping_list_NN_PBC(self):
+    def get_hopping_list_NNN_PBC(self):
         """
         get 1 Dimension hopping or spin chain next-nearest hopping list
         for periodic boundary condition.
