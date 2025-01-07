@@ -10,3 +10,4 @@ from .Bitopeator import *
 from .Hopping_list import *
 from .Basis import *
 from .Coefficient_dict import *
+from .Lattice import *
