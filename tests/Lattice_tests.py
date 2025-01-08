@@ -10,7 +10,7 @@ class TestSpinFieldHamiltonian(unittest.TestCase):
     def test_get_hamiltonian_Sx_L1(self):
         L = 1
         h = 1
-        H = Spin_field_hamiltonian(L, h, coefficient_type="Constant").get_hamiltonian_Sx()
+        H = Spin_field_hamiltonian(L, h, coefficient_type="Constant").get_Hamiltonian_Sx()
         expected_H = np.array([[0, 1], [1, 0]])
         self.assertTrue(np.array_equal(H, expected_H))
 

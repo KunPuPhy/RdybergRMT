@@ -54,7 +54,7 @@ class Spin_field_hamiltonian:
 
 
     #S_x term
-    def get_hamiltonian_Sx(self):
+    def get_Hamiltonian_Sx(self):
         '''
 
         get the hamiltonian matrix of x-direction field
@@ -242,7 +242,7 @@ class Spin_interaction_hamiltonian:
                 # left vector 'i' and Row-indexed 'i-id'
                 i_id = search_i(self.basis, i)
                 HR.append(i_id)
-                HV.append(self.V * self.vdict[pos])
+                HV.append(self.vdict[pos])
         H = sparse.coo_matrix((HV,(HR,HC)), shape = (len(basis), len(basis))).toarray()
         return H
 
@@ -281,9 +281,11 @@ class Spin_interaction_hamiltonian:
                 coefficient = coefficient + (2*read_bit(j,Pos0)-1)*(2*read_bit(j,Pos1)-1)*self.vdict[pos]
             # left vector 'i' and Row-indexed 'i-id'
             i_id = j_id
+            print("coefficient : ", coefficient)
+            print("Total : ", self.V*coefficient)
             HC.append(j_id)
             HR.append(i_id)
-            HV.append(self.V * coefficient)
+            HV.append(coefficient)
         H = sparse.coo_matrix((HV,(HR,HC)), shape = (len(basis), len(basis))).toarray()
         return H
 
@@ -325,7 +327,7 @@ class Spin_interaction_hamiltonian:
                 # left vector 'i' and Row-indexed 'i-id'
                 i_id = search_i(self.basis, i)
                 HR.append(i_id)
-                HV.append(self.V * coefficient)
+                HV.append(coefficient)
         H = sparse.coo_matrix((HV,(HR,HC)), shape = (len(basis), len(basis))).toarray()
         return H
 
